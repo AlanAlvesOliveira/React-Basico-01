@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from 'react';
+import 'materialize-css/dist/css/materialize.min.css'
 import './App.css';
 
 import Tabela from './Tabela';
 import Formulario from './Formulario';
+import Header from './Header';
 
 class App extends Component {
 
@@ -31,12 +33,12 @@ class App extends Component {
     ],
   }
 
-escutadorDeSubmit = autor =>{
-  this.setState({
-    //Spread operador
-    autores:[...this.state.autores, autor]
-  })
-}
+  escutadorDeSubmit = autor => {
+    this.setState({
+      //Spread operador
+      autores: [...this.state.autores, autor]
+    })
+  }
 
   removeAutor = index => {
 
@@ -53,10 +55,12 @@ escutadorDeSubmit = autor =>{
   render() {
     return (
       <Fragment>
-      
-        <Formulario escutadorDeSubmit={this.escutadorDeSubmit}/>
-        <br/>
-        <Tabela autores={this.state.autores} removeAutor={this.removeAutor} />
+        <Header />
+        <div className="container mb-10">
+          <Formulario escutadorDeSubmit={this.escutadorDeSubmit} />
+          <br />
+          <Tabela autores={this.state.autores} removeAutor={this.removeAutor} />
+        </div>
 
       </Fragment>
 

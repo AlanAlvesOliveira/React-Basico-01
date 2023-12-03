@@ -66,7 +66,8 @@ class Formulario extends Component {
                 />
 
 
-                <button type="button" onClick={this.submitFormulario}>Salvar 
+                <button type="button" onClick={this.submitFormulario} className="waves-effect waves-light indigo lighten-2 btn">
+                    Salvar 
                 </button>
             </form>
         )
